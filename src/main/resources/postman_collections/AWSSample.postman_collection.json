@@ -1,0 +1,85 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AWSSample",
+		"_postman_id": "8a9cc268-ca37-1aa7-75a5-dae6424d6ae0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/people",
+			"request": {
+				"url": "http://localhost:8080/people",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/people",
+			"request": {
+				"url": "http://{{host}}:{{port}}/people",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"firstName\" : \"Frodo\",  \"lastName\" : \"Baggins\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/people/search/findByLastName?lastName=Baggins",
+			"request": {
+				"url": {
+					"raw": "http://{{host}}:{{port}}/people/search/findByLastName?lastName=Baggins",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"people",
+						"search",
+						"findByLastName"
+					],
+					"query": [
+						{
+							"key": "lastName",
+							"value": "Baggins",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/people/1",
+			"request": {
+				"url": "http://localhost:8080/people/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
